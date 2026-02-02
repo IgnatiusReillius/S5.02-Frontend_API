@@ -1,18 +1,76 @@
-# React + Vite
+## AI-generated frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI-assisted frontend design to practice code generation and apply it to the backend of the previous REST API project.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User registration and authentication
+- Role-based access control, with admin and user roles
+- Add personal reviews to your books
+- Full CRUD for books, users and reviews 
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Before cloning the project, ensure the following tools are installed:
 
-Note: This will impact Vite dev & build performances.
+- **[Git](https://git-scm.com/install/windows)**
+- **[Composer](https://getcomposer.org/download/)**
 
-## Expanding the ESLint configuration
+You also need to have the [previous repository](https://github.com/IgnatiusReillius/S5.01-API_REST) cloned and working. 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow the instructions in that repository up to step 8, then continue from here.
+
+Pay attention to the server address that the terminal returns when you perform step 8. You will use it later. 
+
+In my case, it is:
+```
+   INFO  Server running on [http://127.0.0.1:8000].
+```
+
+## Installation
+
+### 1. Clone the repository
+```
+git clone https://github.com/IgnatiusReillius/S5.02-Frontend_API
+cd S5.02-Frontend_API
+```
+
+### 2. Install PHP dependencies
+```
+npm install
+```
+
+### 3. Configure the backend URL
+
+Configure the config.es file so that it has the same address as the backend.
+```
+export const API_BASE = "http://127.0.0.1:8000/api";
+```
+
+### 3. Create your environment file
+```
+npm run dev
+```
+
+This command will return a message similar to:
+
+```
+  ➜  Local:   http://localhost:5173/
+```
+
+With this URL, you will be able to access the application.
+
+## Testing the Application
+
+Now you can test the frontend.
+
+You can register with a new username, but you will not have administrator permissions to access all features. To do so, or to simply test an existing user, you can use one of the following already registered users:
+
+| Role | Email | Password |
+|--------|----------|-------------|
+| Admin | admin@biblio.com  | password |
+| User | imclaughlin@example.org | password |
+
+## License
+
+This project is for educational purposes and part of the IT Academy exercises.
